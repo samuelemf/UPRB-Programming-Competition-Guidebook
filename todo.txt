@@ -1,0 +1,26 @@
+bitshift operations
+permutations
+Wrapper classes
+
+Mathematics
+	isprime *
+		pseudo *
+		implementation *
+	list of divisors *
+		pseudo *
+		implementation *
+	factorial *
+		pseudo *
+		long implementation *
+		biginteger implementation *
+	natural sum *
+	divisibility rules *
+searching algorithms
+	binary search
+sorting algorithms
+	selection sort
+	Arrays.sort
+power set algorithms
+	binary power set
+	string based power set
+HashMap

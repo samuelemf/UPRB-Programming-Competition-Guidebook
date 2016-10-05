@@ -1,0 +1,147 @@
+\documentclass[letterpaper]{article}
+
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage[margin=1in]{geometry}
+\usepackage{listings}
+
+\title{Programming competition guidebook \\ v0.1}
+\author{
+  Juan J. Alvarez \\
+  juan.alvarez7@upr.edu \\
+  UPR Bayam\'{o}n \\
+  Computer Science Department
+}
+\date{}
+
+\begin{document}
+
+  \maketitle
+
+  \tableofcontents
+
+  \newpage
+
+  \section{Mathematics}
+
+    \subsection{Check whether a number is prime}
+      In this section we talk about how to programatically check the primality of a given number.
+
+      \subsubsection{Pseudocode}
+        \begin{algorithm}
+          \caption{Prime check algorithm}
+          \begin{algorithmic}[1]
+            \Procedure{isPrime}{$n$}
+              \If{$n < 2$}
+                \Return $false$
+              \EndIf
+              \If{$n == 2$}
+                \Return $true$
+              \EndIf
+              \If{$n \% 2 == 0$}
+                \Return $false$
+              \EndIf
+              \For{$x = 3$ ; $x^2 <= n$ ; $x += 2$}
+                \If{$n \% x == 0$}
+                  \Return $false$
+                \EndIf
+              \EndFor
+              \Return $true$
+            \EndProcedure
+          \end{algorithmic}
+        \end{algorithm}
+
+      \subsubsection{Implementation}
+        \lstinputlisting{code/isprime.java}
+
+    \subsection{List the divisors of a number}
+      In this section we talk about how to programatically list the divisors of a given number.
+
+      \subsubsection{Pseudocode}
+        \begin{algorithm}
+          \caption{Divisor list algorithm}
+          \begin{algorithmic}[1]
+            \Procedure{listDivisors}{$n$}
+              \State $list$ = new empty list of numbers
+              \State add $1$ to $list$
+              \State $mpd = \sqrt{n}$
+              \For{$x = 2$ ; $x <= mpd$ ; $x++$}
+                \If{$n \% x == 0$}
+                  \State add $x$ to $list$
+                  \If{$n \div x \neq x$}
+                    \State add $n/d$ to $list$
+                  \EndIf
+                \EndIf
+              \EndFor
+              \State add $n$ to $list$ \\
+              \Return $list$
+            \EndProcedure
+          \end{algorithmic}
+        \end{algorithm}
+
+    \subsubsection{Implementation}
+      \lstinputlisting{code/listdivisors.java}
+
+    \subsection{Calculating Factorials}
+
+      \subsubsection{Pseudocode}
+        \begin{algorithm}
+          \caption{Factorial Algorithm}
+          \begin{algorithmic}[1]
+            \Procedure{factorial}{$n$}
+              \State $total=1$
+              \For{$x = n$ ; $x > 1$ ; $x++$}
+                \State $total*=x$
+              \EndFor
+              \Return $total$
+            \EndProcedure
+          \end{algorithmic}
+        \end{algorithm}
+
+      \subsubsection{Implementation}
+        This method has a huge flaw due to the fact that it uses 64-bit integers to calculate the result, it is not capable of calculating the factorial of any number larger than 16.
+        \lstinputlisting{code/factorial1.java}
+
+      \subsubsection{BigInteger Implementation}
+        This implementation was done using the BigInteger class to solve the limitational problems of using 64-bit integers.
+        \lstinputlisting{code/factorial2.java}
+
+    \subsection{Sum of Natural Numbers}
+      The sum of the sequence of natural numbers \{$1, 2, 3, ... , n$\} can be written as \[\sum_{x=1}^{n} x = \frac{n(n+1)}{2}\].
+
+    \subsection{Divisibility Rules}
+    \begin{tabular}{ | r | l |}
+      \hline
+      2 & The last digit is 0, 2, 4, 6 or 8. Or the modulus operation with 2 yields 0. \\
+      \hline
+      3 & The sum of the digits is divisible by 3. \\
+      \hline
+      4 & The number formed by the last two digits is divisible by 4. \\
+      \hline
+      5 & The last digit is either 0 or 5. \\
+      \hline
+      6 & It is divisible by 2 AND it is divisible by 3. \\
+      \hline
+      7 & If the last digit multiplied by two and subtracted from the rest of the number is divisible by 7. \\
+      \hline
+      8 & The last three digits are divisible by 8. \\
+      \hline
+      9 & The sum of the digits is divisible by 9. \\
+      \hline
+      10 & The last digit is 0. \\
+      \hline
+      11 & The difference between the sum of the odd placed digits and the sum of the even placed digits is divisible by 11. \\
+      \hline
+      12 & The number is divisible by both 3 and 4. \\
+      \hline
+      13 & Subtract 9 times the last digit from the rest of the number, the result is divisible by 13. \\
+      \hline
+      14 & It is divisible by 2 and 7. \\
+      \hline
+      15 & It is divisible by 3 and 5. \\
+      \hline
+      16 & The last 4 digits are divisible by 16. \\
+      \hline
+    \end{tabular}
+
+\end{document}
