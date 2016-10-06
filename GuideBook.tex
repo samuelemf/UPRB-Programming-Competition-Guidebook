@@ -9,8 +9,15 @@
 \author{
   Juan J. Alvarez \\
   juan.alvarez7@upr.edu \\
-  UPR Bayam\'{o}n \\
-  Computer Science Department
+  Computer Science Department \\
+  University of Puerto Rico \\
+  At Bayam\'{o}n \\
+  \and
+  Dr. Juan Sol\'{a} Sloan \\
+  juan.sola@upr.edu \\
+  Computer Science Department \\
+  University of Puerto Rico \\
+  At Bayam\'{o}n \\
 }
 \date{}
 
@@ -143,5 +150,31 @@
       16 & The last 4 digits are divisible by 16. \\
       \hline
     \end{tabular}
+
+  \section{Strings}
+
+    \subsection{Check if a string is a palindrome}
+      A palindrome is a string that is written the same way as if it were written in reversed order. The perfect example of a palindrome is the word 'racecar', if you write racecar in reverse order you get 'racecar'. The following Java method is an efficient palindrome checker.
+      \lstinputlisting{code/ispalindrome.java}
+
+  \section{Sets}
+
+    \subsection{Counting repeated elements in a set}
+    The following method counts the repeated elements in the given list and stores the count for each unique element in it's own space in a HashMap. The returned value is a HashMap<E, Integer> (E being the type of element being counted) containing the unique elements as the keys and their respective counts as the values.
+    \lstinputlisting{code/countrepetitions1.java}
+    This is an implementation using the previous code to count the repetitions in a list of Integers.
+    \lstinputlisting{code/countrepetitions2.java}
+
+    \subsection{Unique elements in a set}
+      For this section we utilize a common method defined as follows.
+      \lstinputlisting{code/uniqueelements1.java}
+
+      \subsubsection{Counting the unique elements in a set}
+      With the previously defined method we can count the number of unique elements in a list like this:
+      \lstinputlisting{code/uniqueelements2.java}
+
+      \subsubsection{Iterating over the unique elements in a set}
+      With the previously defined method we can iterate over the unique elements in a list like this:
+      \lstinputlisting{code/uniqueelements3.java}
 
 \end{document}
