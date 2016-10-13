@@ -2,6 +2,8 @@
 *.aux
 *.gz
 *.toc
+*.fls
+*.fdb_latexmk
 
 #################
 ## Eclipse

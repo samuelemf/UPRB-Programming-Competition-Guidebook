@@ -13,14 +13,17 @@ Mathematics
 		pseudo *
 		long implementation *
 		biginteger implementation *
-	natural sum *
+	series
+		natural sum *
+		fibonacci
 	divisibility rules *
+bitwise operators
 searching algorithms
 	binary search
 sorting algorithms
 	selection sort
 	Arrays.sort
-power set algorithms
-	binary power set
+power set algorithms *
+	binary power set *
 	string based power set
 HashMap
